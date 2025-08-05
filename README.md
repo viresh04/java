@@ -170,9 +170,8 @@ class lab4a{
     }
 }
 ```
+## lab4b Method Overriding
 ```py
-## lab4b
-//Method Overriding
 class Vehicle{
     void move()
     {
