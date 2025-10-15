@@ -245,6 +245,119 @@ class lab5
     }
 }
 ```
+```py
+//program7: Class and Runnable interface
+//Thread Class
 
+class A extends Thread {
+public void run() {
+for (int i = 1; i <= 10; i++) {
+System.out.println("Thread 1: " + i);
+try {
+Thread.sleep(500); 
+} catch (InterruptedException e) {
+System.out.println("Thread Exception in A");
+ } } } }
+class Bb extends Thread {
+public void run() {
+for (int i = 1; i <= 10; i++) {
+System.out.println("Thread 2: " + i);
+try {
+Thread.sleep(500);
+ } catch (InterruptedException e) {
+System.out.println("Thread Exception in B");
+   } } } }
+class v extends Thread {
+public void run() {
+for (int i = 1; i <= 10; i++) {
+ System.out.println("Thread 3: " + i);
+try {
+Thread.sleep(500);
+ } catch (InterruptedException e) {
+ System.out.println("Thread Exception in C");
+} } } }
+public class MultipleThread {
+public static void main(String[] args) {
+ A t1 = new A();
+ Bb  t2 = new Bb();
+ v t3 = new v();
+t1.start();
+t2.start();
+ t3.start();
+    }  }
+//Runnable Interface
+Class A implements Runnable {
+public void run() {
+for (int i = 1; i <= 10; i++) {
+System.out.println("Thread 1: " + i);
+try {
+Thread.sleep(500); 
+} catch (InterruptedException e) {
+System.out.println("Thread Exception in A");
+}} }  }
+class B implements Runnable {
+public void run() {
+for (int i = 1; i <= 10; i++) {
+System.out.println("Thread 2: " + i);
+try {
+ Thread.sleep(500);
+} catch (InterruptedException e) {
+System.out.println("Thread Exception in B");
+}	}	}	}
+class C implements Runnable {
+public void run() {
+for (int i = 1; i <= 10; i++) {
+System.out.println("Thread 3: " + i);
+try {
+Thread.sleep(500);
+ } catch (InterruptedException e) {
+System.out.println("Thread Exception in C");
+}	}	}	}
+public class MultipleRunnable {
+public static void main(String[] args) {
+A a = new A();
+B b = new B();
+C c = new C();
+Thread t1 = new Thread(a);
+Thread t2 = new Thread(b);
+Thread t3 = new Thread(c);
+t1.start()
+t2.start();
+t3.start();
+}	}	}	}
+```
+```py
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class FrameExample {
+public static void main(String[] args) {
+JFrame frame = new JFrame("Add Two Numbers");
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ frame.setSize(500, 300);
+frame.setLayout(new FlowLayout());
+JTextField text1 = new JTextField(10);
+JTextField text2 = new JTextField(10);
+JButton addButton = new JButton("Add");
+JLabel resultLabel = new JLabel("Result: ");
+addButton.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent e) {
+try {
+int num1 = Integer.parseInt(text1.getText());
+int num2 = Integer.parseInt(text2.getText());
+int sum = num1 + num2;
+ resultLabel.setText("Result: " + sum);
+ } catch (NumberFormatException ex) {
+ resultLabel.setText("Invalid input!");
+     }  }		 });
+ frame.add(new JLabel("Number 1:"));
+ frame.add(text1);
+ frame.add(new JLabel("Number 2:"));
+ frame.add(text2);
+ frame.add(addButton);
+ frame.add(resultLabel);
+ frame.setVisible(true);
+    }	}
 
+```
 
